@@ -49,7 +49,7 @@ class LifxApi
 	def valid?(value, value_format)
 		case value_format
 		when :selector
-			value =~ /^((label|id|(location|group)(_id)?|scene_id):.*|all)$/
+			value =~ /^((label|id|(location|group)(_id)?|scene_id):.*|all)[\|\d]*$/
 		when :numeric
 			value.is_a?(Numeric) or value =~ /^[\d\.]+$/
 		when :boolean
